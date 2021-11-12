@@ -9,16 +9,7 @@
 
 ##✨  Features
 - Music & Video stream support
-- MultiChat support
-- Playlist & Queue support
-- Skip, Pause, Resume, Stop feature
-- Music & Video downloader feature
-- Inline Search support
-- YouTube direct search support
-- YouTube/Local/Live/m3u8 stream support
-- Inline Search support
-- Control With Button support
-- Userbot Auto Join
+
 
 ## 💬 Commands:
 - `/play (query)` - play music from youtube
