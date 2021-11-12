@@ -52,37 +52,36 @@ async def _human_time_duration(seconds):
 )
 async def start_(client: Client, message: Message):
     await message.reply_text(
-        f"""✨ **Welcome {message.from_user.mention()} !**\n
-💭 [{BOT_NAME}](https://t.me/{BOT_USERNAME}) **Memungkinkan Anda memutar musik dan video di grup melalui Obrolan Video Telegram!**
+        f"""✨ **اهلا {message.from_user.mention()} !**\n
+💭 [{BOT_NAME}](https://t.me/{BOT_USERNAME}) **يتيح لك تشغيل الموسيقى ومقاطع الفيديو في مجموعات عبر Telegram Video Chat!**
 
-💡 **Cari tahu semua perintah Bot dan cara kerjanya dengan mengklik » 📚 Commands button!**
+** اكتشف جميع أوامر الروبوت وكيفية عملها بالنقر فوق زر "الأوامر"! **
 
-🔖 **Untuk mengetahui cara menggunakan bot ini, silakan klik » ❓ Basic Guide button!**
-""",
+ ** لمعرفة كيفية استخدام هذا الروبوت ، الرجاء النقر فوق »زر الدليل الأساسي! **""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "➕ Add me to your Group ➕",
+                        "➕ اضني إلى كروبك ➕",
                         url=f"https://t.me/{BOT_USERNAME}?startgroup=true",
                     )
                 ],
-                [InlineKeyboardButton("❓ Basic Guide", callback_data="cbhowtouse")],
+                [InlineKeyboardButton("❓ دليل أساسي", callback_data="cbhowtouse")],
                 [
-                    InlineKeyboardButton("📚 Commands", callback_data="cbcmds"),
-                    InlineKeyboardButton("❤️ Donate", url=f"https://t.me/UnrealZelda"),
+                    InlineKeyboardButton("📚 أوامر", callback_data="cbcmds"),
+                    InlineKeyboardButton("❤️ ادعمني", url=f"https://t.me/ALIKING_A"),
                 ],
                 [
                     InlineKeyboardButton(
-                        "👥 Official Group", url=f"https://t.me/{GROUP_SUPPORT}"
+                        "👥 كروب المالك", url=f"https://t.me/{GROUP_SUPPORT}"
                     ),
                     InlineKeyboardButton(
-                        "📣 Official Channel", url=f"https://t.me/{UPDATES_CHANNEL}"
+                        "📣 قناة المالك", url=f"https://t.me/{UPDATES_CHANNEL}"
                     ),
                 ],
                 [
                     InlineKeyboardButton(
-                        "🚀 Owner", url="https://t.me/UnrealZelda"
+                        "🚀 المالك", url="https://t.me/ALIKING_A"
                     )
                 ],
             ]
@@ -102,15 +101,15 @@ async def alive(client: Client, message: Message):
     keyboard = InlineKeyboardMarkup(
         [
             [
-                InlineKeyboardButton("✨ Group", url=f"https://t.me/{GROUP_SUPPORT}"),
+                InlineKeyboardButton("✨ الكروب", url=f"https://t.me/{GROUP_SUPPORT}"),
                 InlineKeyboardButton(
-                    "📣 Channel", url=f"https://t.me/{UPDATES_CHANNEL}"
+                    "📣 القناة", url=f"https://t.me/{UPDATES_CHANNEL}"
                 ),
             ]
         ]
     )
 
-    alive = f"**Hello {message.from_user.mention()}, i'm {BOT_NAME}**\n\n✨ Bot is working normally\n🍀 My Master: [{ALIVE_NAME}](https://t.me/{OWNER_NAME})\n✨ Bot Version: `v{__version__}`\n🍀 Pyrogram Version: `{pyrover}`\n✨ Python Version: `{__python_version__}`\n🍀 PyTgCalls version: `{pytover.__version__}`\n✨ Uptime Status: `{uptime}`\n\n**Thanks for Adding me here, for playing video & music on your Group's video chat** ❤"
+    alive = f"**هلا {message.from_user.mention()}, i'm {BOT_NAME}**\n\n✨ يعمل البوت بشكل طبيعي\n🍀 المالك [{ALIVE_NAME}](https://t.me/{OWNER_NAME})\n✨ اصدار البوت: `v{__version__}`\n🍀 إصدار البرنامج: `{pyrover}`\n✨ اصدار البايثون: `{__python_version__}`\n🍀 إصدار PyTgCalls: `{pytover.__version__}`\n✨ حالة الجهوزية: `{uptime}`\n\n**شكرًا لإضافتي هنا ، لتشغيل الفيديو والموسيقى على دردشة الفيديو الخاصة بمجموعتك** ❤"
 
     await message.reply_photo(
         photo=f"{ALIVE_IMG}",
@@ -122,9 +121,9 @@ async def alive(client: Client, message: Message):
 @Client.on_message(command(["ping", f"ping@{BOT_USERNAME}"]) & ~filters.edited)
 async def ping_pong(client: Client, message: Message):
     start = time()
-    m_reply = await message.reply_text("pinging...")
+    m_reply = await message.reply_text("يتم الفحص...")
     delta_ping = time() - start
-    await m_reply.edit_text("🏓 `PONG!!`\n" f"⚡️ `{delta_ping * 1000:.3f} ms`")
+    await m_reply.edit_text("🏓 `سرعة!!`\n" f"⚡️ `{delta_ping * 1000:.3f} ms`")
 
 
 @Client.on_message(command(["uptime", f"uptime@{BOT_USERNAME}"]) & ~filters.edited)
@@ -133,7 +132,7 @@ async def get_uptime(client: Client, message: Message):
     uptime_sec = (current_time - START_TIME).total_seconds()
     uptime = await _human_time_duration(int(uptime_sec))
     await message.reply_text(
-        "🤖 bot status:\n"
-        f"• **Uptime:** `{uptime}`\n"
-        f"• **Start time:** `{START_TIME_ISO}`"
+        "🤖 حالة البوت:\n"
+        f"• **مدة التشغيل:** `{uptime}`\n"
+        f"• **وقت البدء:** `{START_TIME_ISO}`"
     )

@@ -15,36 +15,36 @@ from config import (
 @Client.on_callback_query(filters.regex("cbstart"))
 async def cbstart(_, query: CallbackQuery):
     await query.edit_message_text(
-        f"""✨ **Welcome [{query.message.chat.first_name}](tg://user?id={query.message.chat.id}) !**\n
-💭 [{BOT_NAME}](https://t.me/{BOT_USERNAME}) **Memungkinkan Anda memutar musik dan video di grup melalui Obrolan Video Telegram!**
+        f"""✨ **اهلا [{query.message.chat.first_name}](tg://user?id={query.message.chat.id}) !**\n
+💭 [{BOT_NAME}](https://t.me/{BOT_USERNAME}) يمكنك استخدامة لتشغيل الموسيقى + اغاني في محادثات الصوتية**
 
-💡 **Cari tahu semua perintah Bot dan cara kerjanya dengan mengklik » 📚 Commands button!**
+💡 **تعرف على جميع أوامر الروبوت وكيفية عملها من خلال النقر فوق زر "الأوامر"**
 
-🔖 **Untuk mengetahui cara menggunakan bot ini, silakan klik » ❓ Basic Guide button!**""",
+🔖 **لمعرفة كيفية استخدام هذا الروبوت ، الرجاء النقر فوق »زر الدليل الأساسي!**""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "➕ Add me to your Group ➕",
+                        "➕ أضفني إلى مجموعتك ➕",
                         url=f"https://t.me/{BOT_USERNAME}?startgroup=true",
                     )
                 ],
-                [InlineKeyboardButton("❓ Basic Guide", callback_data="cbhowtouse")],
+                [InlineKeyboardButton("❓دليل أساسي ", callback_data="cbhowtouse")],
                 [
-                    InlineKeyboardButton("📚 Commands", callback_data="cbcmds"),
-                    InlineKeyboardButton("❤ Donate", url=f"https://t.me/{OWNER_NAME}"),
+                    InlineKeyboardButton("📚 أوامر", callback_data="cbcmds"),
+                    InlineKeyboardButton("❤ يتبرع", url=f"https://t.me/{OWNER_NAME}"),
                 ],
                 [
                     InlineKeyboardButton(
-                        "👥 Official Group", url=f"https://t.me/{GROUP_SUPPORT}"
+                        "👥 كروب البوت", url=f"https://t.me/{GROUP_SUPPORT}"
                     ),
                     InlineKeyboardButton(
-                        "📣 Official Channel", url=f"https://t.me/{UPDATES_CHANNEL}"
+                        "📣 قناة البوت", url=f"https://t.me/{UPDATES_CHANNEL}"
                     ),
                 ],
                 [
                     InlineKeyboardButton(
-                        "🚀 Owner", url="https://t.me/UnrealZelda"
+                        "🚀 المالك", url="https://t.me/ALIKING_A"
                     )
                 ],
             ]
@@ -56,22 +56,21 @@ async def cbstart(_, query: CallbackQuery):
 @Client.on_callback_query(filters.regex("cbhowtouse"))
 async def cbguides(_, query: CallbackQuery):
     await query.edit_message_text(
-        f"""❓ **Basic Guide for using this bot:**
+        f"""❓ **الدليل الأساسي لاستخدام هذا الروبوت**
 
-1.) **First, add me to your group.**
-2.) **Then, promote me as administrator and give all permissions except Anonymous Admin.**
-3.) **After promoting me, type /reload in group to refresh the admin data.**
-3.) **Add @{ASSISTANT_NAME} to your group or type /userbotjoin to invite her.**
-4.) **Turn on the video chat first before start to play video/music.**
-5.) **Sometimes, reloading the bot by using /reload command can help you to fix some problem.**
+1.) ** أولاً ، أضفني إلى مجموعتك. **
+ 2.) ** بعد ذلك ، قم بترقيتي كمسؤول ومنح جميع الأذونات باستثناء المسؤول المجهول. **
+ 3.) ** بعد ترقيتي ، اكتب /reload التحميل في مجموعة لتحديث بيانات المسؤول. **
+ 3.) ** أضف @{ASSISTANT_NAME} إلى مجموعتك أو اكتب /userbotjoin لدعوتها. **
+ 4.) ** قم بتشغيل دردشة الفيديو أولاً قبل البدء في تشغيل الفيديو /music. **
+ 5.) ** في بعض الأحيان ، يمكن أن تساعدك إعادة تحميل الروبوت باستخدام /reload تحميل الأمر في إصلاح بعض المشاكل. **
+📌 **إذا لم ينضم المستخدم الروبوت إلى الدردشة المرئية ، فتأكد من تشغيل دردشة الفيديو بالفعل ، أو اكتب /userbotleave ثم اكتب /userbotjoin مرة أخرى..**
 
-📌 **If the userbot not joined to video chat, make sure if the video chat already turned on, or type /userbotleave then type /userbotjoin again.**
+💡 **إذا كانت لديك أسئلة متابعة حول هذا الروبوت ، فيمكنك إخباره من خلال دردشة الدعم الخاصة بي هنا: @{GROUP_SUPPORT}**
 
-💡 **If you have a follow-up questions about this bot, you can tell it on my support chat here: @{GROUP_SUPPORT}**
-
-⚡ __Powered by {BOT_NAME} A.I__""",
+⚡ __مشغل بواسطة {BOT_NAME} A.I__""",
         reply_markup=InlineKeyboardMarkup(
-            [[InlineKeyboardButton("🔙 Go Back", callback_data="cbstart")]]
+            [[InlineKeyboardButton("🔙 رجوع", callback_data="cbstart")]]
         ),
     )
 
@@ -79,20 +78,20 @@ async def cbguides(_, query: CallbackQuery):
 @Client.on_callback_query(filters.regex("cbcmds"))
 async def cbcmds(_, query: CallbackQuery):
     await query.edit_message_text(
-        f"""✨ **Hello [{query.message.chat.first_name}](tg://user?id={query.message.chat.id}) !**
+        f"""✨ **اهلا [{query.message.chat.first_name}](tg://user?id={query.message.chat.id}) !**
 
-» **press the button below to read the explanation and see the list of available commands !**
+» ** اضغط على الزر أدناه لقراءة الشرح ومشاهدة قائمة الأوامر المتاحة**
 
 ⚡ __Powered by {BOT_NAME} A.I__""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("👷🏻 Admin Cmd", callback_data="cbadmin"),
-                    InlineKeyboardButton("🧙🏻 Sudo Cmd", callback_data="cbsudo"),
+                    InlineKeyboardButton("اوامر الادمن", callback_data="cbadmin"),
+                    InlineKeyboardButton("🧙🏻 اوامر المالك", callback_data="cbsudo"),
                 ],[
-                    InlineKeyboardButton("📚 Basic Cmd", callback_data="cbbasic")
+                    InlineKeyboardButton("📚 اوامر الاعضاء", callback_data="cbbasic")
                 ],[
-                    InlineKeyboardButton("🔙 Go Back", callback_data="cbstart")
+                    InlineKeyboardButton("🔙 رجوع", callback_data="cbstart")
                 ],
             ]
         ),
@@ -102,25 +101,32 @@ async def cbcmds(_, query: CallbackQuery):
 @Client.on_callback_query(filters.regex("cbbasic"))
 async def cbbasic(_, query: CallbackQuery):
     await query.edit_message_text(
-        f"""🏮 here is the basic commands:
+        f"""🏮 هنا الأوامر الأساسية:
+---------------------------------------------------------
+» /mplay لتشغيل مقاطع الصوتيه يمكنك الرد على اغنيه جاهزة او تحميل مباشر من يوتيوب مثل
+/mplay محمد السالم اعوف الدنيا
+---------------------------------------------------------
+» /mstream (لتشغيل مقاطع الصوتيه يمكنك الرد على اغنيه جاهزة او تحميل مباشر من يوتيوب مثل
+/mstream  محمد السالم اعوف الدنيا
+---------------------------------------------------------
+» /vplay لتشغيل مقاطع الفيديو يمكنك الرد على مقاطع او تحميل مباشر مثل
+/vplay محمد السالم اعوف الدنيا
+---------------------------------------------------------
+» /vstream -لتشغيل مقاطع الفيديو يمكنك الرد على مقاطع او تحميل مباشر مثل
+/vstream محمد السالم اعوف الدنيا
+---------------------------------------------------------
+» /video لتحميل مقاطع الفيديو  المرئيه مثل
+/video محمد السالم اعوف الدنيا
+---------------------------------------------------------
+»/song لتحميل مقاطع الصوتيه من يوتيوب مثل
+»/song محمد السالم اعوف الدنيا
+ »/ping - سرعة البوت
+ »/uptime - إظهار حالة وقت تشغيل الروبوت
+ »/alive - إظهار معلومات الروبوت على قيد الحياة (في مجموعة)
 
-» /mplay (song name/link) - play music on video chat
-» /mstream (query/link) - stream the yt live/radio live music
-» /vplay (video name/link) - play video on video chat
-» /vstream - play live video from yt live/m3u8
-» /playlist - show you the playlist
-» /video (query) - download video from youtube
-» /song (query) - download song from youtube
-» /lyric (query) - scrap the song lyric
-» /search (query) - search a youtube video link
-
-» /ping - show the bot ping status
-» /uptime - show the bot uptime status
-» /alive - show the bot alive info (in group)
-
-⚡️ __Powered by {BOT_NAME} AI__""",
+⚡️ __بواسطة {BOT_NAME} AI__""",
         reply_markup=InlineKeyboardMarkup(
-            [[InlineKeyboardButton("🔙 Go Back", callback_data="cbcmds")]]
+            [[InlineKeyboardButton("🔙 رجوع", callback_data="cbcmds")]]
         ),
     )
 
@@ -128,36 +134,34 @@ async def cbbasic(_, query: CallbackQuery):
 @Client.on_callback_query(filters.regex("cbadmin"))
 async def cbadmin(_, query: CallbackQuery):
     await query.edit_message_text(
-        f"""🏮 here is the admin commands:
+        f"""🏮 هنا أوامر المشرف:
 
-» /pause - pause the stream
-» /resume - resume the stream
-» /skip - switch to next stream
-» /stop - stop the streaming
-» /vmute - mute the userbot on voice chat
-» /vunmute - unmute the userbot on voice chat
-» /reload - reload bot and refresh the admin data
-» /userbotjoin - invite the userbot to join group
-» /userbotleave - order userbot to leave from group
-
+»/pause - ايقاف الاغنيه
+ »/resume - استئناف الاغنيه
+ »/skip - التبديل إلى الدفق التالي
+ »/stop - وقف التدفق
+ »/vmute - كتم صوت userbot في الدردشة الصوتية
+ »/vunmute - قم بإلغاء كتم صوت المستخدم في الدردشة الصوتية
+ »/reload - أعد تحميل الروبوت وقم بتحديث بيانات المسؤول
+ »/userbotjoin - دعوة مساعد للانضمام إلى المجموعة
+ »/userbotleave - طلب خروج المستخدم من المجموعة
 ⚡️ __Powered by {BOT_NAME} AI__""",
         reply_markup=InlineKeyboardMarkup(
-            [[InlineKeyboardButton("🔙 Go Back", callback_data="cbcmds")]]
+            [[InlineKeyboardButton("🔙 رجوع", callback_data="cbcmds")]]
         ),
     )
 
 @Client.on_callback_query(filters.regex("cbsudo"))
 async def cbsudo(_, query: CallbackQuery):
     await query.edit_message_text(
-        f"""🏮 here is the sudo commands:
+        f"""أوامر المالك:
 
-» /rmw - clean all raw files
-» /rmd - clean all downloaded files
-» /leaveall - order userbot to leave from all group
-
-⚡ __Powered by {BOT_NAME} AI__""",
+»/rmw - تنظيف جميع الملفات الخام
+ »/rmd - تنظيف كافة الملفات التي تم تنزيلها
+ »/leaveall - اطلب userbot للمغادرة من كل المجموعة
+⚡ __بواسطة{BOT_NAME} AI__""",
         reply_markup=InlineKeyboardMarkup(
-            [[InlineKeyboardButton("🔙 Go Back", callback_data="cbcmds")]]
+            [[InlineKeyboardButton("🔙 رجوع", callback_data="cbcmds")]]
         ),
     )
 
@@ -166,9 +170,9 @@ async def cbsudo(_, query: CallbackQuery):
 async def cbmenu(_, query: CallbackQuery):
     a = await _.get_chat_member(query.message.chat.id, query.from_user.id)
     if not a.can_manage_voice_chats:
-        return await query.answer("💡 only admin with manage voice chats permission that can tap this button !", show_alert=True)
+        return await query.answer("💡المسؤول الوحيد الذي لديه إذن إدارة الدردشات الصوتية يمكنه النقر على هذا الزر !", show_alert=True)
     await query.edit_message_text(
-        f"⚙️ **settings of** {query.message.chat.title}\n\n⏸ : pause stream\n▶️ : resume stream\n🔇 : mute userbot\n🔊 : unmute userbot\n⏹ : stop stream",
+        f"⚙️ **إعدادات** {query.message.chat.title}\n\n⏸ : ايقاف مؤقت\n▶️ : استئناف الاغنية\n🔇 : كتم البوت\n🔊 : الغاء كتم البوت\n⏹ : انهاء الاغنية",
         reply_markup=InlineKeyboardMarkup(
             [[
                 InlineKeyboardButton("⏹", callback_data="cbstop"),
@@ -178,7 +182,7 @@ async def cbmenu(_, query: CallbackQuery):
                 InlineKeyboardButton("🔇", callback_data="cbmute"),
                 InlineKeyboardButton("🔊", callback_data="cbunmute"),
             ],[
-                InlineKeyboardButton("🗑 Close", callback_data="cls")],
+                InlineKeyboardButton("🗑 اغلاق", callback_data="cls")],
             ]
         ),
     )
@@ -188,5 +192,5 @@ async def cbmenu(_, query: CallbackQuery):
 async def close(_, query: CallbackQuery):
     a = await _.get_chat_member(query.message.chat.id, query.from_user.id)
     if not a.can_manage_voice_chats:
-        return await query.answer("💡 only admin with manage voice chats permission that can tap this button !", show_alert=True)
+        return await query.answer("💡المسؤول الوحيد الذي لديه إذن إدارة الدردشات الصوتية يمكنه النقر على هذا الزر !", show_alert=True)
     await query.message.delete()
