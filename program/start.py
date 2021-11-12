@@ -62,7 +62,7 @@ async def start_(client: Client, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        "➕ اضني إلى كروبك ➕",
+                        "➕ اضفني إلى كروبك ➕",
                         url=f"https://t.me/{BOT_USERNAME}?startgroup=true",
                     )
                 ],

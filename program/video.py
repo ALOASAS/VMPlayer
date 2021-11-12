@@ -243,7 +243,7 @@ async def vplay(c: Client, m: Message):
             Q = 720
             amaze = HighQualityVideo()
             if search == 0:
-                await loser.edit("⛔ **no results found.**")
+                await loser.edit("⛔ **لم يتم العثور على نتائج.**")
             else:
                 songname = search[0]
                 url = search[1]

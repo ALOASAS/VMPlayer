@@ -19,7 +19,7 @@ async def clear_downloads(_, message: Message):
             os.remove(os.path.join(downloads, file))
         await message.reply_text("✅ **حذف جميع الملفات التي تم تنزيلها**")
     else:
-        await message.reply_text("❌ **no files downloaded**")
+        await message.reply_text("❌ **لم يتم تنزيل أي ملفات**")
 
         
 @Client.on_message(command(["rmw", "clean"]) & ~filters.edited)

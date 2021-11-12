@@ -68,7 +68,7 @@ async def cbguides(_, query: CallbackQuery):
 
 💡 **إذا كانت لديك أسئلة متابعة حول هذا الروبوت ، فيمكنك إخباره من خلال دردشة الدعم الخاصة بي هنا: @{GROUP_SUPPORT}**
 
-⚡ __مشغل بواسطة {BOT_NAME} A.I__""",
+⚡ __مشغل بواسطة {BOT_NAME} __""",
         reply_markup=InlineKeyboardMarkup(
             [[InlineKeyboardButton("🔙 رجوع", callback_data="cbstart")]]
         ),
@@ -82,7 +82,7 @@ async def cbcmds(_, query: CallbackQuery):
 
 » ** اضغط على الزر أدناه لقراءة الشرح ومشاهدة قائمة الأوامر المتاحة**
 
-⚡ __Powered by {BOT_NAME} A.I__""",
+⚡ __مشغل بواسطة {BOT_NAME} __""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
